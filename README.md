@@ -15,19 +15,19 @@ EchoBot is an AI-powered chatbot built with React and Vite, designed to provide 
 - **Frontend:** React.js, Vite
 - **State Management:** React Context API
 - **Styling:** Tailwind CSS
-- **Icons & Animations:** FontAwesome, Typical.js
+- **Icons & Animations:** FontAwesome
 
 ## 🌍 Live Demo
 
-Check out the live version of EchoBot here: [Live Link](#) *(Replace with actual link)*
+Check out the live version of EchoBot here: [Live Link](#) *(https://echo-7n21tj2df-muskan-priyas-projects.vercel.app)*
 
 ## 📸 Screenshots
 
 Here are some screenshots showcasing EchoBot in action:
 
-![EchoBot Home](#) *()*
-![EchoBot Processing](#) *()*
-![EchoBot Chat](#) *(Replace with actual image path)*
+![EchoBot Home](./src/assets/Screenshot-1.png)
+![EchoBot Processing](./src/assets/Screenshot-2.png)
+![EchoBot Chat](./src/assets/Screenshot-3.png)
 
 ## 📦 Installation
 
