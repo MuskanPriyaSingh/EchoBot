@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext, useState } from 'react'
 import { Context } from '../../context/Context'
 
-const Sidebar = () => {
+const SidePanel = () => {
     const [extended, setExtended] = useState(false);
     const { onSent, prevPrompts, setRecentPrompt, newChat } = useContext(Context);
 
@@ -67,4 +67,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default SidePanel;
