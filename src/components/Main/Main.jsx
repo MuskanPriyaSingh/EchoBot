@@ -6,7 +6,7 @@ import { faImages, faMicrophone, faPaperPlane, faPenFancy, faAtom, faUsers, faLi
 import { useState, useEffect, useRef } from 'react';
 import { FaSignOutAlt} from 'react-icons/fa';
 import { Context } from '../../context/Context'
-import Typical from 'react-typical';
+
 
 const Main = () => {
 
@@ -15,7 +15,12 @@ const Main = () => {
     const [greeting, setGreeting] = useState("Hello");
     const [menuOpen, setMenuOpen] = useState(false);
     const menuRef = useRef(null);
-    const [showSecondLine, setShowSecondLine] = useState(false);
+
+    const [text1, setText1] = useState('');
+    const [text2, setText2] = useState('');
+    const [index, setIndex] = useState(0);
+    const message1 = "Hello, Muskan!";
+    const message2 = "How can I assist you today?";
 
     useEffect(() => {
         const hour = new Date().getHours();
@@ -39,6 +44,28 @@ const Main = () => {
           document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [menuOpen]);
+
+    useEffect(() => {
+        let typingInterval;
+        
+        if (index === 0) {
+          typingInterval = setInterval(() => {
+            setText1((prev) => message1.slice(0, prev.length + 1));
+          }, 100); 
+    
+          if (text1 === message1) {
+            setTimeout(() => {
+              setIndex(1);
+            }, 2000); 
+          }
+        } else if (index === 1) {
+          typingInterval = setInterval(() => {
+            setText2((prev) => message2.slice(0, prev.length + 1));
+          }, 100);
+        }
+    
+        return () => clearInterval(typingInterval);
+    }, [text1, text2, index]);
 
   return (
     <div className='flex-1 min-h-[100vh] pb-[15vh] bg-gray-900 relative'>
@@ -78,9 +105,8 @@ const Main = () => {
         </div>
         <div className='max-w-4xl m-auto'>
             {!showResult ? (
-                <>
+                <>  
                     <div className="my-8 text-4xl sm:text-5xl font-medium p-5">
-                        {/* First Line */}
                         <p
                             style={{
                             background: "-webkit-linear-gradient(16deg, #4b90ff, #ff5546)",
@@ -88,14 +114,16 @@ const Main = () => {
                             WebkitTextFillColor: "transparent",
                             }}
                         >
-                            <Typical steps={["Hello, Muskan!", 2000]} wrapper="span" />
+                            {text1}
                         </p>
 
-                        {/* Second Line */}
-                        <p className="text-gray-500">
-                            <Typical steps={["How can I assist you today?", 2000]} wrapper="span" />
-                        </p>
+                        {index === 1 && (
+                            <p className="text-gray-500">
+                            {text2}
+                            </p>
+                        )}
                     </div>
+                                    
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-5 text-gray-300">
                         {[
                             { text: "Generate creative content ideas for a blog", icon: faPenFancy },
