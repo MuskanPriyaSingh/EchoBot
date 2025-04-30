@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+#root{
+    min-height: 100vh;
+    display: flex;
+    animation: fade_in 1.5s;
+}
+
+@keyframes fade_in{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.fade-animation{
+  animation: fade_in 1.5s;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari */
+  }
+  
+.scroll-hidden {
+    -ms-overflow-style: none;  /* Hide scrollbar for IE, Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+@keyframes fadeIn {
+    0% {
+      background-position: -800px 0px;
+    }
+    100% {
+      background-position: 800px 0px;
+    }
+}
+  
+.fade-in hr{
+    background-size: 800px 50px;
+    animation: fadeIn 2s infinite linear;
+}
+  
+  
