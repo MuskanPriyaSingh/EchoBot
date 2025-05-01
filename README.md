@@ -25,9 +25,9 @@ Check out the live version of EchoBot here: [Live Link](#) *(https://echo-7n21tj
 
 Here are some screenshots showcasing EchoBot in action:
 
-![EchoBot Home](./src/assets/Screenshot-1.png)
-![EchoBot Processing](./src/assets/Screenshot-2.png)
-![EchoBot Chat](./src/assets/Screenshot-3.png)
+![EchoBot Home](./Frontend/src/assets/Screenshot-1.png)
+![EchoBot Processing](./Frontend/src/assets/Screenshot-2.png)
+![EchoBot Chat](./Frontend/src/assets/Screenshot-3.png)
 
 ## 📦 Installation
 
